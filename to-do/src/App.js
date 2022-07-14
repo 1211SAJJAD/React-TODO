@@ -1,12 +1,14 @@
-// import logo from './logo.svg';
 import './App.css';
+import TO_DO from './TO_DO';
 
-function App() {
+const App = () => {
+  console.log("App...")
   return (
-    <div className="App">
-      <p>Hello</p>
+    <div id="App">
+      <h1>TO-DO</h1>
+      <TO_DO />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
