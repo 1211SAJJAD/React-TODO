@@ -14,14 +14,19 @@ const TO_DO = () => {
 
     const handleSubmit = useCallback((event) => {
         event.preventDefault()
+        if(new_item == "") {alert("Empty title!!!"); return}
         set_list_items([...list_items, new_item])
         set_new_item("")
     }, [new_item])
 
+    const removeTODO = useCallback((index) => {
+        set_list_items([...list_items.slice(0, index), ...list_items.slice(index+1, )])
+    }, [list_items])
+
     return (
         <div id="to_do">
             <TO_DO_Form handleChange={handleChange} handleSubmit={handleSubmit} new_item={new_item} />
-            <TO_DO_List list_items={list_items} />
+            <TO_DO_List list_items={list_items} removeTODO={removeTODO}/>
         </div>
     )
 }

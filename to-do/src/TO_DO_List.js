@@ -1,18 +1,17 @@
 import { memo } from "react"
+import List_Item from "./List_Item"
 
-const TO_DO_List = ({list_items}) => {
+const TO_DO_List = ({list_items, removeTODO}) => {
     console.log("TO_DO_List...")
-    const list_items_jsx = list_items.map((title) => {
+    const list_items_jsx = list_items.map((title, index) => {
         return (
-            <li key={title.toString()}>{title}</li>
+            <List_Item title={title} removeTODO={removeTODO} key={title} index={index}/>
         )
     })
 
     return (
         <div id="to_do_list">
-            <ol>
-                {list_items_jsx}
-            </ol>
+            {list_items_jsx}
         </div>
     )
 }
