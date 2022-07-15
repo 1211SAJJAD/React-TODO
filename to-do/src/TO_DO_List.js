@@ -10,8 +10,11 @@ const TO_DO_List = ({list_items, removeTODO}) => {
     })
 
     return (
-        <div id="to_do_list">
-            {list_items_jsx}
+        <div id="header_todolist">
+            <h3>UNFINISHED:</h3>    
+            <div id="to_do_list">
+                {list_items_jsx}
+            </div>
         </div>
     )
 }
